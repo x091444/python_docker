@@ -27,11 +27,13 @@ pipeline{
             sh 'docker compose ps'
         }
     }
-    post { 
-        success { 
-            echo 'Deployment completed successfully!' } failure { 
-                echo 'Deployment failed. Check the Jenkins console output.' 
-                } 
-                    }
+    post{
+        success{
+            echo "Deployment completed successfully!"
+        }
+        failure{
+            echo "Deployment failed. Check the Jenkins console output."
+        }
+    }
 
 }
