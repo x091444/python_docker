@@ -10,6 +10,13 @@ pipeline{
             }
         }
 
+        stage("copy .env file"){
+            steps{
+                sh 'cp /home/ubuntu/python_docker/.env .env'
+            }
+
+        }
+
         stage("docker build image"){
             steps{
                 sh "docker compose build"
